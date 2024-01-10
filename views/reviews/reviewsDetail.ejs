@@ -1,0 +1,60 @@
+<%  layout('layout/boilerplate') -%>
+
+
+<div class="row  mt-5">
+
+
+    <%for(let i=0;i<listing.reviews.length;i++){%>
+
+      <div class="col-lg-4 col-sm-1 col-md-2">
+
+        <div class="card reviewCard p-4">
+            <div class="card-body">
+
+
+      
+                <p class="starability-result card-text" data-rating=<%=listing.reviews[i].rating%>>Rated: 3 stars</p>
+                <h6 class="card-title"> <b>Author</b> : @<%=listing.reviews[i].author.username%></h6>
+                <p class="card-text"><b>Comment:</b> <%=listing.reviews[i].comment%></p>
+                <h3> <i class="fa-regular fa-heart likeIcon"></i>   :   <%=listing.reviews[i].likes.length%></h3>
+                <p class="card-text"><b>Date Added :</b><%=listing.reviews[i].createdAt.toDateString()%></p>
+
+                
+                
+           
+                
+    
+
+
+                
+                <div class="mb-2 ">
+                    <a href="/listings/<%=listing.id%>/reviews/<%=listing.reviews[i].id%>/like"><i class="fa-regular fa-thumbs-up likeIcons"></i></a>
+
+                    <a href="/listings/<%=listing.id%>/reviews/<%=listing.reviews[i].id%>/unLike"><i class="fa-regular fa-thumbs-down likeIcons"></i></a>
+                </div>
+
+            
+                <%if( CurrUser &&  listing.reviews[i].author._id.equals(CurrUser._id)){%>
+              
+               <div class="mb-2">
+                <a href="/listings/<%=listing.id%>/reviews/<%=listing.reviews[i].id%>/whoLiked"><button class="btn btn-dark likeBtn">Who Liked ?</button></a>
+               </div>
+
+                <%}%>
+            </div>
+          </div>
+        
+
+      </div>
+    
+   <% }%>
+
+</div>
+
+
+
+
+
+
+
+

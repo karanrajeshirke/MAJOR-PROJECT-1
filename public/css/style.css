@@ -1,0 +1,263 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    flex: 1;
+}
+
+
+.navbar
+{
+    background-color: white;
+    height: 4rem;
+}
+.nav-link
+{
+    color: #222222  !important ;
+    /* font-size: 1.2rem !important; */
+}
+.fa-compass
+{
+    
+    color:#fe424d ;
+    font-size: 2rem;
+}
+
+.footer
+{
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;   
+}
+.footer-icons i
+{
+    padding: 0.7rem;
+    font-size: 1.3rem;
+    color: #222222;
+}
+.footer-links 
+{
+    margin-top: 0.3rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.footer-links a 
+{
+    margin: 0.2rem;
+    text-decoration: none;
+    color: #222222;
+}
+.footer-links a:hover
+{
+    text-decoration: underline;
+}
+
+.card
+{
+    border: none !important;
+    margin-bottom: 2rem;
+}
+
+.card-img-top
+{
+    width: 100% !important;
+    border-radius: 1.5rem !important;
+    object-fit: cover !important;
+}
+/* .card-text 
+{
+    font-weight: 500 !important;
+} */
+.card-body
+{
+    padding: 0 !important;
+    
+}
+.listing-link
+{
+    text-decoration: none;
+}
+/* .card-img-overrlay
+{
+    opacity: 0;
+} */
+
+.card-img-overlay:hover
+{
+    opacity: 0.2;
+    background-color: white;
+}
+
+.addbtn
+{
+    background-color:#fe424d !important;
+    border: none !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+}
+
+.editbtn,.deletebtn
+{
+    padding: 0.5rem 2rem 0.5rem 2rem !important;
+    background-color:#fe424d !important;
+    border: none !important;
+    margin: 1rem 1.6rem 0 0;
+}
+
+.rating-card {
+    border: 1px solid #ccc !important; 
+    margin-bottom: 2rem;
+}
+
+.star
+{
+    color: rgb(255,165,0);
+    font-size: 1.3rem;
+}
+
+
+
+#filter
+  {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 3rem;
+    align-items: center;
+    
+  }
+  .filters 
+  {
+    text-align: center;
+    margin-right: 2rem;
+    
+  }
+  .filters a{
+    text-decoration: none;
+    color: black;
+    font-weight: 300;
+  }
+  .filters i,i p
+  {
+    font-size: 1.2rem;
+    color:#616161
+  }
+  .filters a:hover i
+  {
+    font-size: 1.4rem;
+    color: black;
+  }
+  #tax-toggle
+  {
+    border: 1px solid black;
+    border-radius: 1rem;
+    height: 3.5rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+
+
+
+
+  .btn-search
+{
+  background-color:#fe424d;
+  color:#fff;
+  border-radius: 25px;
+  padding: 0 1rem 0 1rem;
+}
+.btn-filter
+{
+  background-color:#fe424d;
+  color:#fff;
+  border-radius: 25px;
+  padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+
+}
+.btn-search:hover,.btn-filter:hover
+{
+  background-color:#fe424d;
+    color:#fff
+}
+#search-ip
+{
+
+  border-radius: 25px;
+  padding: 0.5rem 3rem 0.5rem 3rem;
+  font-size: 1rem;
+}
+
+.reviewCard
+{
+  border: 1px solid gray !important;
+}
+
+.likeBtn
+{
+  width: 150px;
+  padding:5px 20px 5px 20px !important;
+}
+
+
+
+.likes
+{
+  padding: 50px;
+  border-radius: 10px;
+  
+}
+.likeIcons
+{
+  font-size: 30px;
+  padding: 10px;
+  color: black;
+
+
+}
+.likeIcons:hover
+{
+  font-size: 34px;
+}
+.likeIcon
+{
+  font-size: 30px;
+  color: red;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid gray;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #fe424d;
+  border: 1px solid black !important;
+}
+
+td {
+  border: 1px solid black !important; /* Add a right border for td elements */
+}
+
+#editImage
+{
+  border-radius: 10px;
+}
+#map {
+  width:900px; height:400px; 
+border-radius: 5px;}
+

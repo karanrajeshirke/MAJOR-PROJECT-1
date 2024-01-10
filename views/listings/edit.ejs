@@ -1,0 +1,107 @@
+<%  layout('layout/boilerplate') -%>
+
+<body>
+    
+
+    <h4 class="text-center mt-2">Edit Listing</h4>
+    <div class="row">
+
+
+        <div class="col-8 offset-2">
+
+
+            <form  method="POST" action="/listings/<%=listing._id%>?_method=PUT"  novalidate class="needs-validation" enctype="multipart/form-data"> 
+
+
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title :</label>
+                    <input type="text" name="title" id="title" class="form-control" value="<%=listing.title%>" required>
+                    <div class="invalid-feedback">Enter a valid title</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description :</label>
+                    <textarea name="description" id="description" cols="30" rows="7" class="form-control"   id="description"  required ><%=listing.description%></textarea>
+                    <div class="invalid-feedback">Enter valid description</div>
+
+                </div>
+
+                <div class="mb-3">
+                    <label for="image" class="form-label"   >Image :</label>
+                    <input type="file" name="image" id="image" class="form-control" >
+                </div>
+
+                <div class="mb-3">
+                   <img src=<%=originalImage%> id="editImage">
+                </div>
+
+                <div class="mb-3">
+                    <label for="description" class="form-label">Category :</label>
+                    <select class="form-select" aria-label="Default select example" name="category" >
+                        <option>Select a Category</option>
+                        <option value="BeachFront" selected>BeachFront</option>
+                        <option value="Mountains">Mountains</option>
+                        <option value="Snow">Snow</option>
+                        <option value="Swimming">Swimming</option>
+                        <option value="Castle">Castle</option>
+                        <option value="Camping">Camping</option>
+                        <option value="Sunny">Sunny</option>
+                        <option value="Rainforest">Rainforest</option>
+                        <option value="Dome">Dome</option>
+                        <option value="Luxury">Luxury</option>
+                      </select>
+                </div>
+
+
+                <div class="mb-3">
+                    <label for="price" class="form-label">Price : </label>
+                    <input type="text" name="price" id="price" class="form-control" value="<%=listing.price%>" required>
+                    <div class="invalid-feedback">Enter valid price</div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-lg-6  col-md-12">
+                        <label for="location" class="form-label">Location :</label>
+                        <input type="text" name="location" id="location" class="form-control" value="<%=listing.location%>" required>
+                    <div class="invalid-feedback">Enter valid location</div>
+
+
+                    </div>
+                    <div class="col-lg-6 ">
+                        <label for="country" class="form-label">Country :</label>
+                        <input type="text" name="country" id="country" class="form-control" value="<%=listing.country%>" required>
+                    <div class="invalid-feedback">Enter valid country</div>
+
+
+                    </div>
+
+
+
+
+
+
+                </div>
+
+
+               
+                <button class="btn btn-dark mt-3 addbtn mr-5">Add</button>
+
+
+            </form>
+
+
+        </div>
+
+
+
+
+    </div>
+
+   
+
+</body>
+
+
+

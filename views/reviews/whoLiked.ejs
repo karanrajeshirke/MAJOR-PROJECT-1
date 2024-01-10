@@ -1,0 +1,42 @@
+<%  layout('layout/boilerplate') -%>
+
+
+
+<div class="row mt-5">
+
+
+
+
+    <div class="likesBox col-4 offset-3">
+
+        <h1>Liked By....</h1>
+        <ul class="likes" type="none">
+
+
+            <table>
+                <thead>
+                  <tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <%for(let i=0;i<review.likes.length;i++){%>
+                        <tr>
+                            <td><%=review.likes[i].username %></td>
+                            <td><%=review.likes[i].email %></td>
+                          </tr>
+                        
+                
+                    <%}%>
+        
+                
+                </tbody>
+              </table>
+                
+            
+        </ul>
+    </div>
+</div>
+
+
