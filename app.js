@@ -9,8 +9,8 @@ const mongoose=require('mongoose');
 const path=require('path');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
-
-
+const wrapAsync=require('./utils/wrapAsync.js')
+const Listing=require('./models/listing.js')
 
 var methodOverride=require('method-override');
 app.use(methodOverride("_method"));
@@ -113,10 +113,18 @@ main().then(()=>
     console.log(err);
 })
 
-app.get('/',(req,res)=>
-{
-    res.send("home");
-})
+// app.get('/',(req,res)=>
+// {
+//     res.render('listings/index')
+// })
+app.get(
+    "/",
+    wrapAsync(async (req, res) => {
+      const allListings = await Listing.find();
+  
+      res.render("listings/index.ejs", { allListings });
+    })
+  );
 
 app.all('*',(req,res,next)=>
 {
