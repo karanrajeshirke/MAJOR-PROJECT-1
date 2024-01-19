@@ -1,0 +1,37 @@
+<%  layout('layout/boilerplate') -%>
+
+
+
+<h1 class="mt-5">Favourites : <%=allListings.length%></h1>
+<body>
+    
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 m-3">
+
+      
+      
+      
+
+        <%for(let i=0;i<allListings.length;i++){%>
+    
+            <a href="/listings/<%=allListings[i].id%>" class="listing-link">
+    
+            
+            <div class="card col">
+                <img class="card-img-top" src="<%=allListings[i].image.url%>" alt="Card image cap" style="height: 10rem;">
+                <div class="card-img-overlay"></div>
+                <div class="card-body">
+                  <p class="card-text"><b><%=allListings[i].title%></b> <br> </p>
+                </div>
+              </div>
+    
+    
+            </a>
+    
+        
+        <%}%>
+          
+    
+         
+    
+    </div>
+</body>

@@ -102,7 +102,7 @@ body {
     padding-right: 2rem !important;
 }
 
-.editbtn,.deletebtn
+.editbtn,.deletebtn,.fbtn
 {
     padding: 0.5rem 2rem 0.5rem 2rem !important;
     background-color:#fe424d !important;
@@ -261,3 +261,7 @@ td {
   width:900px; height:400px; 
 border-radius: 5px;}
 
+
+.non-clickable {
+  pointer-events: none !important;
+}

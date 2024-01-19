@@ -5,6 +5,7 @@ const ExpressError = require("../utils/ExpressError.js");
 // const {ListingSchema,ReviewSchema}=require('../models');
 const Listing = require("../models/listing.js");
 const Review = require("../models/review.js");
+const User=require('../models/user.js')
 const { isLoggedIn, ValidateListing, IsOwner } = require("../middleware.js");
 const multer  = require('multer')
 const {storage}=require('../cloudConfig.js');
@@ -38,6 +39,67 @@ router.get('/search',wrapAsync(async(req,res)=>
 }));
 
 
+//!Add to favourites
+//now you have an user  id and the listing id
+router.get('/:listingId/addFavourite',isLoggedIn,wrapAsync(async(req,res)=>
+{
+
+    let {listingId}=req.params
+    let userId=req.user._id;
+    let listing=await Listing.findById({_id:listingId})
+    
+
+    if(listing.favourites.includes(userId))
+    {
+      req.flash("error","Already Added to Favourites !");
+    }
+    else
+    {
+      listing.favourites.push(userId)
+      let data=await listing.save()
+      console.log(data)
+      req.flash("success","Added to Favourites !");
+    }
+
+    res.redirect("/listings/getFavourite")
+}))
+
+//! get all favourites 
+router.get('/getFavourite',isLoggedIn,wrapAsync(async(req,res)=>
+{
+    let userId=req.user._id;
+
+    let allListings = await Listing.find({ favourites: userId }).populate('favourites');
+
+    console.log(allListings)
+    
+    res.render("listings/favourites",{allListings})
+
+    
+}))
+
+
+router.get('/:listingId/removeFavourite',isLoggedIn,wrapAsync(async(req,res)=>
+{
+
+    let {listingId}=req.params
+    let userId=req.user._id;
+    let listing=await Listing.findById({_id:listingId})
+    
+
+    if(listing.favourites.includes(userId))
+    {
+      req.flash("success","Removed from Favourites !");
+      let  data=await Listing.findByIdAndUpdate(listingId, { $pull: { favourites:userId  } });
+      console.log(data)
+    }
+    else
+    {
+      req.flash("success","Not added to favourite to be removed!");
+    }
+
+    res.redirect("/listings/getFavourite")
+}))
 
 //!cateogy page
 
@@ -73,7 +135,6 @@ router.get(
   "/",
   wrapAsync(async (req, res) => {
     const allListings = await Listing.find();
-
     res.render("listings/index.ejs", { allListings });
   })
 );
@@ -160,8 +221,10 @@ router.get(
       .populate({ path: "reviews", populate: { path: "author" } })
       .populate("owner");
 
+      //!note never populate if you want to check someone id with the data 
     // console.log(listing.owner.username);
 
+    console.log(listing)
     res.render("listings/show.ejs", { listing });
   })
 );

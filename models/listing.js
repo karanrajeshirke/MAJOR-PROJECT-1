@@ -22,6 +22,13 @@ const listingSchema = new Schema({
       type:String,
       enum:['BeachFront','Mountains','Snow','Swimming','Castle','Camping','Sunny','Rainforest','Dome','Luxury'],
   },
+  favourites:
+  [
+    {
+      type:mongoose.Schema.Types.ObjectId,
+      ref:"User"
+    }
+  ],
   reviews:
   [
     {

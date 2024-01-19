@@ -45,8 +45,23 @@
                         <form method="POST" action="/listings/<%=listing._id%>?_method=DELETE">
                             <button class="btn btn-dark deletebtn">Delete</button>
                         </form>
-
                     <%}%>
+
+
+
+                    <% if (CurrUser) { %>
+                        <% if (!listing.favourites.includes(CurrUser._id)) { %>
+                            
+                            <a href="/listings/<%=listing._id%>/addFavourite">
+                                <button class="btn btn-dark editbtn">Add to Favourite</button>
+                            </a>
+                        <% } else { %>
+                            
+                            <a href="/listings/<%=listing._id%>/removeFavourite">
+                                <button class="btn btn-dark editbtn">Remove Favourite</button>
+                            </a>
+                        <% } %>
+                    <% } %>
 
                 
 
