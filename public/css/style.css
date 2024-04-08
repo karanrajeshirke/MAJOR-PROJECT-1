@@ -250,7 +250,7 @@ th {
 }
 
 td {
-  border: 1px solid black !important; /* Add a right border for td elements */
+  border: 1px solid black !important; 
 }
 
 #editImage
