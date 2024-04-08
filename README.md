@@ -42,11 +42,9 @@ You can access a live demo of the application [here](https://final-project-1-qko
 
 3. Create an .env file and adding the  environment variables required for the project:
 
-   
-4. Start the server:
+4. Start the server
 
-  ```
-  node app.js
-  ```
+   ```
+   node app.js
 
 5. Visit http://localhost:8080 in your browser.
