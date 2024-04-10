@@ -13,7 +13,7 @@ TravelNest is a comprehensive travel listing web application designed to provide
 
 ## Demo
 
-You can access a live demo of the application [here](https://final-project-1-qko4.onrender.com/).
+You can access a live demo of the application https://final-project-1-qko4.onrender.com/
 
 ## Technologies Used
 
